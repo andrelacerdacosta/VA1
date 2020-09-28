@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Listagem
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<h4 *ngIf="intemsTodo.length == 0">Nenhum cadastrado registrado</h4>
+  <IonList>
+    <IonItem *ngFor="let todo of intemsTodo">
+      <IonLabel>
+        <img src="https://149447598.v2.pressablecdn.com/wp-content/uploads/2019/02/male-avatar-1024x1024.png" alt="100">
+        <h2>Nome: {{ todo.nome }}</h2>
+        <h3>Email: {{ todo.email }}</h3>
+        <p>Telefone: {{ todo.telefone }}</p>
+      </IonLabel>
+    </IonItem>
+  </IonList>
+    <ion-fab (click)="presentNewTodoModal()" vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button>
+        <ion-icon name= "add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+</ion-content>
